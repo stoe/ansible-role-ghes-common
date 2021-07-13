@@ -1,0 +1,10 @@
+---
+datacenter: "default"
+
+# possible values:
+#   - "high availability"
+#   - "geo"
+role: "high availability"
+
+# set this to `true` for `replica_role: "geo"`
+is_active: false

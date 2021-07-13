@@ -1,0 +1,13 @@
+---
+- name: Set datacenter
+  # http://docs.ansible.com/ansible/command_module.html
+  command: "ghe-repl-node --datacenter {{ datacenter }}"
+  changed_when: false
+
+- name: Set as active replica
+  # http://docs.ansible.com/ansible/command_module.html
+  command: "ghe-repl-node --active"
+  changed_when: false
+  when:
+    - is_active|bool
+    - role == "geo"
